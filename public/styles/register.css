@@ -1,0 +1,183 @@
+#register {
+    width: 90%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+
+}
+
+header {
+    display: flex;
+    align-items: center; /* Alinha os itens */
+    justify-content: space-between; /* Espaço entre */
+
+    margin-top: 40px;
+}
+
+header a {
+    display: flex;
+    align-items: center;
+
+    color: var(--title-color);
+    font-weight: bold;
+    font-size: 13pt;
+}
+
+header span {
+    display: flex; /* Precisa ser flex para mostrar a img */
+
+    background-image: url('../icones/arrow-left.svg'); 
+
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+section {
+    background-color: white;
+    border-radius: 10px;
+    
+    margin: auto;
+    margin-top: 50px;
+    padding: 30px;
+    
+}
+
+section  h1 {
+    font-size: 38px;
+
+    width: 380px;
+}
+
+fieldset {
+    margin-top: 64px;
+    border: none;
+}
+
+fieldset legend {
+    margin-bottom: 30px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    margin-bottom: 24px;
+}
+
+.field-group {
+    display: flex;
+}
+
+section input, section select {
+    background-color: #f0f0f5;
+    border: none;
+    border-radius: 8px;
+
+    height: 45px;
+    padding-left: 16px;
+    font-size: 14px;
+
+    margin-top: 5px;
+    
+}
+
+section select {
+    /* Remove a cetinha de descer nas opções */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+section .field-group .field + .field { /*aplica no q vem em seguida */
+    margin-left: 20px;
+}
+
+section label, section h4 {
+    font-size: 13px;
+    color: #7e7e8f96;
+    font-weight: 600;
+}
+
+section button {
+    width: 260px;
+    height: 60px;
+
+    background-color: var(--primary-color);
+    color: white;
+
+    border: none;
+    border-radius: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 38px;
+    margin-right: 0;
+
+    font-size: 18px;
+    font-weight: bold;
+    font-family:'Ubuntu', sans-serif;
+
+    cursor: pointer;
+
+    transition: 200ms;
+}
+
+button:hover {
+    background-color: var(--title-color);
+    color: var(--primary-color);
+}
+
+.itens-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px; /* espaçamento entre as colunas e os elementos -- ativo com o gap*/
+}
+
+.itens-grid li {
+    background-color: #e1faec;
+    list-style: none; /* remove as bolinhas da lista */
+
+    border-radius: 8px;
+    border: 1.5px solid var(--primary-color);
+
+    height: 180px;
+    padding: 32px 24px 16px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    cursor: pointer;
+
+    transition: border 200ms;
+}
+
+.itens-grid li span {
+    margin-top: 28px;
+    color: var(--title-color);
+    font-weight: bold;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.itens-grid li:hover {
+    border: 1.5px solid var(--title-color);
+}
+
+.itens-grid li.selected {
+    border: 1.5px solid var(--title-color);
+    background-color: #836ab4;
+}
+
+.itens-grid li img, 
+.itens-grid li span {
+    pointer-events: none; /* não há eventos de click -- Para assim no console nao retonrnar a img ou span */
+}
+

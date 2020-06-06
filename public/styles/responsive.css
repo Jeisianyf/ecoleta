@@ -1,0 +1,51 @@
+/* quando der menos de 900px - Responsividade */
+@media (max-width:900px) { /* 0 até 900 */
+    #home-page {
+        background-position-x: 70vw;
+    }
+
+    #home-page .content {
+        align-items: center;
+        text-align: center;
+    }
+
+    #home-page header a {
+        position: absolute;
+        bottom: 48px;
+        left: auto;
+        right: auto;
+    }
+
+    #home-page main {
+        align-items: center;
+    }
+
+    #results-page .cards {
+        grid-template-columns: 1fr;
+    }
+
+    #register .field-group {
+        flex-direction: column;
+    }
+
+    #register .field-group .field + .field {
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 1700px) {
+    #home-page {
+        background-position-x: 40vw;
+    }
+
+}
+
+@media (max-height: 760px) {
+    #home-page {
+        background-position-y: 200px;
+    }
+
+}
+
+
+

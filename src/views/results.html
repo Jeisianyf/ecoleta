@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% set pageId = "results-page" %}
+
+{% block styles %}
+    <link rel="stylesheet" href="./styles/results.css">
+{% endblock styles %}
+
+{% block title %}
+    <title>Locais Encontrados</title>
+{% endblock title %}
+
+{% block content %}
+    {%include "partials/page-header.html"%}
+
+    <main>
+
+        {% if total > 0 %}
+            <h3>
+                <strong>{{total}} Locais</strong>
+                Encontrados
+            </h3>
+            <div class="cards">
+
+                {% for place in places %}
+
+                    <div class="card">
+                        <img src="{{ place.image }}" alt="{{ place.name }}">
+                        <h1>{{ place.name }}</h1>
+                        <h2>{{ place.itens }}</h2>
+
+                        <p>
+                            {{ place.city }},
+                            {{ place.state }}
+                            <br>
+                            {{ place.adress }}
+                            <br>
+                            Nº{{ place.num }}
+                            
+                            {% if place.complement == '' %}
+                            
+                            {% endif %}
+                             {{ place.complement }}
+                        </p>
+                    </div>
+
+                {% endfor %}
+
+            </div>
+
+        {%else%}
+        <h1>Nenhum local registrado</h1>
+
+        {% endif %}
+
+    </main>
+{% endblock content %}

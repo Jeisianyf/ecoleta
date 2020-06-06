@@ -1,0 +1,118 @@
+
+#home-page {
+    height: 100vh; /*Dinâmico*/
+
+    background: url('../icones/home-background.svg') no-repeat;
+    background-position: 35vw bottom;
+}
+
+#home-page .content {
+    width: 90%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+
+}
+
+header {
+    display: flex;
+    align-items: center; /* Alinha os itens */
+    justify-content: space-between; /* Espaço entre */
+
+    margin-top: 40px;
+}
+
+header a {
+    display: flex;
+
+    color: var(--title-color);
+    font-weight: bold;
+    font-size: 13pt;
+}
+
+header span {
+    display: flex; /* Precisa ser flex para mostrar a img */
+
+    background-image: url('../icones/log-in.svg');
+
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+#home-page main {
+    max-width: 560px;
+
+    /* dá o espaço do header pq preparamos no hearder tb */
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#home-page main h1 {
+    font-size: 52px;
+    
+}
+
+#home-page main p {
+    font-size: 22px;
+    line-height: 30px;
+
+    margin-top: 20px;
+}
+
+#home-page main a {
+    width: 100%;
+    max-width: 360px;
+    height: 68px;
+
+    background-color: var(--primary-color);
+
+    border-radius: 16px;
+
+    display: flex;
+    align-items: center;
+
+    margin-top: 38px;
+
+    font-size: 18px;
+
+    transition: 400ms;
+}
+
+#home-page main a:hover {
+    background-color: var(--title-color);
+    color: var(--primary-color);
+}
+
+#home-page main a span {
+    width: 72px;
+    height: 70px;
+
+    border-radius: 16px 0 0 16px;
+    
+
+    background-color: rgba(0, 0, 0, 0.08);
+
+    display: flex; /*para aparecer a img */
+    align-items: center;
+    justify-content: center;
+}
+
+#home-page main a span::after { /* criando elemento através do css */
+    content: "";
+    background: url('../icones/search.svg') no-repeat;
+
+    width: 40px;
+    height: 30px;
+}
+
+#home-page main a strong {
+    flex: 1;
+    text-align: center;
+}

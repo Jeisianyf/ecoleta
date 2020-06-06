@@ -1,0 +1,130 @@
+{% extends "layout.html" %}
+
+{% set pageId = "register" %}
+
+{% block styles %}
+    <link rel="stylesheet" href="./styles/register.css">
+    <link rel="stylesheet" href="./styles/modal.css">
+{% endblock styles %}
+
+{% block title %}
+    <title>Registro</title>
+{% endblock title %}
+
+{% block content %}
+    {%include "partials/page-header.html"%}
+    <section>
+        <form action="/savepoint" method="POST">
+            <h1>Cadastrar ponto de coleta</h1>
+            <fieldset>
+                <legend>
+                    <h3>Dados da entidade</h3>
+                </legend>
+
+                <div class="field-group">
+                    <div class="field">
+                        <label for="name">Nome da entidade</label>
+                        <input type="text" name="name" required="required">
+                    </div>
+
+                    <div class="field">
+                        <label for="name">Imagem</label>
+                        <input type="url" placeholder="Insira uma URL" name="image" required="required">
+                    </div>
+
+                </div>
+
+                <div class="field-group">
+
+                    <div class="field">
+                        <label for="adress">Endereço</label>
+                        <input type="text" name="adress" required="required">
+                    </div>
+
+                    <div class="field">
+                        <label for="num">Número</label>
+                        <input type="number" name="num" required="required">
+                    </div>
+
+                    <div class="field">
+                        <label for="complement">Complemento</label>
+                        <input type="text" name="complement">
+                    </div>
+
+                </div>
+
+                <div class="field-group">
+                    <div class="field">
+                        <label for="uf">Estado</label>
+                        <select name="uf" required="required">
+                            <option value="">Selecione o Estado</option>
+                        </select>
+                        <input type="hidden" name="state">
+                        <!--Colocando o nome do estado na url diretamente do front-->
+                    </div>
+
+                    <div class="field">
+                        <label for="city">Cidade</label>
+                        <select name="city" disabled="disabled" required="required">
+                            <option value="">Selecione a Cidade</option>
+                        </select>
+                    </div>
+                </div>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>
+                    <h3>itens de coleta</h3>
+                    <h4>Selecione um ou mais itens abaixo</h4>
+                </legend>
+
+                <div class="itens-grid">
+                    <li data-id="Lâmpadas">
+                        <img src="./icones/lampadas.svg" alt="Lâmpadas">
+                        <span>Lâmpadas</span>
+                    </li>
+
+                    <li data-id="Pilhas e Baterias">
+                        <img src="./icones/baterias.svg" alt="Pilhas e Baterias">
+                        <span>Pilhas e Baterias</span>
+                    </li>
+
+                    <li data-id="Papéis e Papelão">
+                        <img src="./icones/papeis-papelao.svg" alt="Papéis e Papelão">
+                        <span>Papéis e Papelão</span>
+                    </li>
+
+                    <li data-id="Resíduos Eletrônicos">
+                        <img src="./icones/eletronicos.svg" alt="Resíduos Eletrônicos">
+                        <span>Resíduos Eletrônicos</span>
+                    </li>
+
+                    <li data-id="Resíduos Orgânicos">
+                        <img src="./icones/organicos.svg" alt="Resíduos Orgânicos">
+                        <span>Resíduos Orgânicos</span>
+                    </li>
+
+                    <li data-id="Óleo de Cozinha">
+                        <img src="./icones/oleo.svg" alt="Óleo de Cozinha">
+                        <span>Óleo de Cozinha</span>
+                    </li>
+                </div>
+                <input type="hidden" name="itens">
+
+            </fieldset>
+
+            <button type="submit">Cadastrar ponto</button>
+        </form>
+    </section>
+{% endblock content %}
+
+{% block modal %}
+    {% if saved %}
+        {%include "partials/registred.html"%}}
+    {% endif %}
+{% endblock modal %}
+
+{% block script %}
+    <script src="./scripts/register.js"></script>
+{% endblock script %}
